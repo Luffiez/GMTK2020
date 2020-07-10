@@ -1,4 +1,5 @@
 # GMTK2020
+Game Maker's Toolkit's 48hr Game Jam
 
 - `Creators: Erik Rodriguez & Björn Bengtsoon`
 - `Date: 2020/07/10-2020/07/12`
