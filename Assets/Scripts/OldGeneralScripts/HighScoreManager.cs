@@ -38,7 +38,7 @@ public class HighScoreManager : MonoBehaviour
     void Awake()
     {
         string sceneName = SceneManager.GetActiveScene().name;
-        filePath = Application.persistentDataPath + $"/{sceneName}_scoreboard.txt";
+        filePath = Application.persistentDataPath + $"/scoreboard_data.txt";
         scoreboard = LoadScoreboardData();
 
         if(instance)

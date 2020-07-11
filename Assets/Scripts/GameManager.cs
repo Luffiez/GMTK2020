@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Level Complete!");
         SetSceneState(false);
 
-        HighScoreManager.instance.AddToScoreboard(numberOfHonks, timer);
+        HighScoreManager.instance.AddToScoreboard(SceneManager.GetActiveScene().name, numberOfHonks, timer);
         Invoke("RestartScene", 3f);
     }
     private void RestartScene()

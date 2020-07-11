@@ -13,7 +13,7 @@ public class ScoreboardUI : MonoBehaviour
 
     void Start()
     {
-        scoreboard = HighScoreManager.instance.levelList;
+        scoreboard = HighScoreManager.instance.Scoreboard;
 
         LoadscoreboardScores();
     }
@@ -21,13 +21,15 @@ public class ScoreboardUI : MonoBehaviour
     void LoadscoreboardScores()
     {
         int j = 0;
-        for (int i = scoreboard.scoreList.Count - 1; i >= 0; i--)
-        {
-            GameObject textObject = Instantiate(textPrefab, textPanel);
-            TMP_Text text = textObject.GetComponent<TMP_Text>();
-            text.text = $"{GetPlacementName(j)} \nTime: {scoreboard.scoreList[i].timer} \nHonks: {scoreboard.scoreList[i].honks} \nDate: {scoreboard.scoreList[i].date}";
-            j++;
-        }
+        // NEED TO CHOOSE WHICH LEVEL TO VIEW SCORE ON.
+
+        //for (int i = scoreboard.levels.Count - 1; i >= 0; i--)
+        //{
+        //    GameObject textObject = Instantiate(textPrefab, textPanel);
+        //    TMP_Text text = textObject.GetComponent<TMP_Text>();
+        //    text.text = $"{GetPlacementName(j)} \nTime: {scoreboard.scoreList[i].timer} \nHonks: {scoreboard.scoreList[i].honks} \nDate: {scoreboard.scoreList[i].date}";
+        //    j++;
+        //}
     }
 
     string GetPlacementName(int id)
