@@ -1,5 +1,4 @@
-﻿using UnityEngine.SceneManagement;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
@@ -9,18 +8,12 @@ public class Goal : MonoBehaviour
     {
         gm = GameManager.instance;
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Gesse"))
         {
-            Debug.Log("Level Complete!");
-            gm.SetSceneState(false);
-            Invoke("RestartScene", 3f);
+            gm.CompleteLevel();
         }
-    }
-
-    private void RestartScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
