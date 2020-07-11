@@ -33,7 +33,6 @@ public class Distraction : MonoBehaviour
         Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, layerMask);
         if (hit != null)
         {
-            Debug.Log("hit");
             Vector2 direction = (pos1 - pos2).normalized;
             float force = maxForce * 1 - forceStartPercent * (transform.position - hit.transform.position).sqrMagnitude / (radius * radius);
             goose.AddForce(direction * force);

@@ -1,13 +1,43 @@
 fileFormatVersion: 2
-guid: 3fbea9acbc206644e99ff587a8d56f50
+guid: d313109211360fb48b636eb259f850c3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6357066537086400474
-    second: Foxy_0
+      213: 7820756614665790884
+    second: MrGoose_0
   - first:
-      213: 1196277765325230189
-    second: Foxy_1
+      213: -7932160302663144664
+    second: MrGoose_1
+  - first:
+      213: 6766311580512504252
+    second: MrGoose_2
+  - first:
+      213: 3789925448024894494
+    second: MrGoose_3
+  - first:
+      213: -3486770105502199372
+    second: MrGoose_4
+  - first:
+      213: 2739494484282841714
+    second: MrGoose_5
+  - first:
+      213: -6109645663286003108
+    second: MrGoose_6
+  - first:
+      213: -1622104743386368106
+    second: MrGoose_7
+  - first:
+      213: -8490056676842290945
+    second: MrGoose_8
+  - first:
+      213: -2754406412369708249
+    second: MrGoose_9
+  - first:
+      213: 7820322980997915308
+    second: MrGoose_10
+  - first:
+      213: 124702890148065607
+    second: MrGoose_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -105,43 +135,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Foxy_0
+      name: MrGoose_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad7be849556d83850800000000000000
-      internalID: 6357066537086400474
+      spriteID: 4a5e0f374b8e88c60800000000000000
+      internalID: 7820756614665790884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Foxy_1
+      name: MrGoose_1
       rect:
         serializedVersion: 2
         x: 16
         y: 0
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6098e61a480a9010800000000000000
-      internalID: 1196277765325230189
+      spriteID: 82bee4a2b3e4be190800000000000000
+      internalID: -7932160302663144664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MrGoose_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb94f047884c6ed50800000000000000
+      internalID: 6766311580512504252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MrGoose_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1cacb67d15889430800000000000000
+      internalID: 3789925448024894494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MrGoose_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b1171010118c9fc0800000000000000
+      internalID: -3486770105502199372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MrGoose_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27a12df08b3a40620800000000000000
+      internalID: 2739494484282841714
       vertices: []
       indices: 
       edges: []
