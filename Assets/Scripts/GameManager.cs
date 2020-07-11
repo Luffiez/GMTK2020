@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
+    [SerializeField]
     private bool isActiveScene = false;
 
     public bool IsActiveScene { get => isActiveScene; }
