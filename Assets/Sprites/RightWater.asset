@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9e81c7ed9bf87488b4e8da38fc4cd7, type: 3}
+  m_Name: RightWater
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -4272949958406870782, guid: e1973f622973964479cde510b269709d, type: 3}
+  - {fileID: -6468910726198660926, guid: e1973f622973964479cde510b269709d, type: 3}
+  - {fileID: -7967309640338825673, guid: e1973f622973964479cde510b269709d, type: 3}
+  - {fileID: -7967309640338825673, guid: e1973f622973964479cde510b269709d, type: 3}
+  - {fileID: -6468910726198660926, guid: e1973f622973964479cde510b269709d, type: 3}
+  - {fileID: -4272949958406870782, guid: e1973f622973964479cde510b269709d, type: 3}
+  - {fileID: -4272949958406870782, guid: e1973f622973964479cde510b269709d, type: 3}
+  - {fileID: -4272949958406870782, guid: e1973f622973964479cde510b269709d, type: 3}
+  m_MinSpeed: 2
+  m_MaxSpeed: 2
+  m_AnimationStartTime: 0
+  m_TileColliderType: 0
