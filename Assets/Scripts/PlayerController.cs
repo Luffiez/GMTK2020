@@ -25,9 +25,17 @@ public class PlayerController : MonoBehaviour
     private bool isFacingRight;
     private bool isFacingUp;
 
+    Rigidbody2D goose;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        goose = GameObject.FindGameObjectWithTag("Gesse").GetComponent<Rigidbody2D>();
+
+        if (!goose)
+        {
+            Debug.LogError("Can't find ze goose!!");
+        }
     }
 
     private void Update()
@@ -55,7 +63,6 @@ public class PlayerController : MonoBehaviour
             return;
 
         honkTimer = honkCooldown;
-        Debug.Log("honk!");
         Collider2D hit = Physics2D.OverlapCircle(transform.position, honkRadius, gooseMask);
        
         if(hit)
@@ -63,7 +70,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Hit goose with honk, it's super effective!");
             Vector2 direction = (transform.position - hit.transform.position).normalized;
             float force = maxForce * 1 - forceStartPercent * (transform.position - hit.transform.position).sqrMagnitude / (honkRadius * honkRadius);
-            hit.GetComponent<Rigidbody2D>().AddForce(direction * force);
+            goose.AddForce(direction * force);
         }
     }
 
@@ -87,7 +94,6 @@ public class PlayerController : MonoBehaviour
     public void HonkInput(InputAction.CallbackContext context)
     {
         Honk();
-        Debug.Log("Honk " + context.valueType);
     }
     #endregion
 }

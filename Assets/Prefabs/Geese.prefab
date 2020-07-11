@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2406461421197494962}
   m_Layer: 8
   m_Name: Geese
-  m_TagString: Untagged
+  m_TagString: Gesse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c9fbf1be1671f459f3252ab263e6fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 1
+  maxSpeed: 2
 --- !u!58 &2406461421197494962
 CircleCollider2D:
   m_ObjectHideFlags: 0
