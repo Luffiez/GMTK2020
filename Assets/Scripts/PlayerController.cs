@@ -5,10 +5,19 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 2;
-    public float honkCooldown = 0.5f;
-    public float honkRadius = 2;
-    public LayerMask gooseMask;
+    [SerializeField]
+    float moveSpeed = 2;
+    [SerializeField]
+    LayerMask gooseMask;
+
+    [SerializeField]
+    float honkCooldown = 0.5f;
+    [SerializeField]
+    float honkRadius = 2;
+    [SerializeField]
+    float forceStartPercent;
+    [SerializeField]
+    float maxForce;
 
     private float honkTimer = 0;
     Vector2 movementInput;
@@ -44,11 +53,14 @@ public class PlayerController : MonoBehaviour
 
         honkTimer = honkCooldown;
         Debug.Log("honk!");
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, honkRadius, transform.up,Mathf.Infinity, gooseMask);
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, honkRadius, gooseMask);
        
         if(hit)
         {
-            // send honk message to goose!
+            Debug.Log("Hit goose with honk, it's super effective!");
+            Vector2 direction = (transform.position - hit.transform.position).normalized;
+            float force = maxForce * 1 - forceStartPercent * (transform.position - hit.transform.position).sqrMagnitude / (honkRadius * honkRadius);
+            hit.GetComponent<Rigidbody2D>().AddForce(direction * force);
         }
     }
 
