@@ -37,16 +37,15 @@ public class CameraMovement : MonoBehaviour
         float sqrLength = ((Vector2)transform.position - point1).sqrMagnitude;
         if (sqrLength > sqrStartLength)
         {
-            transform.position = new Vector3(point2.x, point2.y, transform.position.z);
             point1 = point2;
             index++;
             if (index >= points.Length)
             {
-                //done call event
-                Destroy(this);
+               
             }
             else
             {
+                transform.position = new Vector3(point2.x, point2.y, transform.position.z);
                 point2 = points[index].position;
                 sqrStartLength = (point1 - point2).sqrMagnitude;
                 direction = (point2 - point1).normalized;

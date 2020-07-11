@@ -12,6 +12,7 @@ public class Distraction : MonoBehaviour
     protected float forceStartPercent;
     [SerializeField]
     protected float maxForce;
+
     protected Rigidbody2D goose;
 
     private void Start()
