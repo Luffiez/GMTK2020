@@ -41,6 +41,9 @@ public class PlayerController : MonoBehaviour
         }
         if(rb.velocity.y > 0 && !isFacingUp ||
             rb.velocity.y < 0 && isFacingUp)
+        {
+            FlipY();
+        }
 
         if (honkTimer > 0)
             honkTimer -= Time.deltaTime;
@@ -84,7 +87,7 @@ public class PlayerController : MonoBehaviour
     public void HonkInput(InputAction.CallbackContext context)
     {
         Honk();
-        Debug.Log("Honk");
+        Debug.Log("Honk " + context.valueType);
     }
     #endregion
 }
