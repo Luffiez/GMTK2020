@@ -23,6 +23,7 @@ public class CameraPaner : MonoBehaviour
         sqrStartLength = (point1 - point2).sqrMagnitude;
         direction = (point2 - point1).normalized;
         transform.position = new Vector3(point1.x, point1.y, transform.position.z);
+        gm = GameManager.instance;
     }
 
     private void Update()
@@ -37,6 +38,7 @@ public class CameraPaner : MonoBehaviour
             if (index >= points.Length)
             {
                 //done call event
+                gm.SetSceneState(true);
                 Destroy(this);
             }
             else

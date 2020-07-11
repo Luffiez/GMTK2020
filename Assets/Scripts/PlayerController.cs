@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
         if (honkTimer > 0)
             return;
 
+        gm.IncreaseHonks();
         honkTimer = honkCooldown;
         Collider2D hit = Physics2D.OverlapCircle(transform.position, honkRadius, gooseMask);
        
