@@ -19,7 +19,7 @@ public class Detractor : MonoBehaviour
         if (hit != null)
         {
             Debug.Log("hit");
-            Vector2 direction = (hit.transform.position - transform.position).normalized;
+            Vector2 direction = (transform.position - hit.transform.position).normalized;
             float force = maxForce * 1 - forceStartPercent * (transform.position - hit.transform.position).sqrMagnitude / (radius * radius);
             hit.GetComponent<Rigidbody2D>().AddForce(direction * force);
         }
