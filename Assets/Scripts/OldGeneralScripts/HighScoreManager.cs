@@ -107,9 +107,17 @@ public class HighScoreManager : MonoBehaviour
         return scoreboard.levels.Find(x => x.levelName == level);
     }
 
-    Score GetHighestScore(Level level)
+    public Score GetHighestScore(string sceneName)
     {
+        Level level = GetLevel(sceneName);
+
+        if(level == null && level.scoreList.Count > 0)
+        {
+            return null;
+        }
+
         Score highest = level.scoreList[0];
+        
         foreach (Score score in level.scoreList)
         {
             if (score.timer < highest.timer)
@@ -117,18 +125,6 @@ public class HighScoreManager : MonoBehaviour
         }
 
         return highest;
-    }
-
-    public string GetHighestScore(string sceneName)
-    {
-        Level level = GetLevel(sceneName);
-
-        if(level == null && level.scoreList.Count > 0)
-        {
-            return string.Empty;
-        }
-
-        return GetHighestScore(level).ToString();
     }
 
     public List<string> LoadCompletedLevels()
