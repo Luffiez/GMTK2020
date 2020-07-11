@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private bool isFacingUp;
 
     Rigidbody2D goose;
+    GameManager gm;
 
     void Start()
     {
@@ -36,10 +37,15 @@ public class PlayerController : MonoBehaviour
         {
             Debug.LogError("Can't find ze goose!!");
         }
+
+        gm = GameManager.instance;
     }
 
     private void Update()
     {
+        if (!gm.IsActiveScene)
+            return;
+
         rb.velocity = movementInput * moveSpeed;
 
         if(rb.velocity.x > 0 && !isFacingRight ||

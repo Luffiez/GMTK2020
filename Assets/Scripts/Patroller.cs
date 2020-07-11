@@ -14,6 +14,8 @@ public class Patroller : MonoBehaviour
     Vector2 point2;
     float sqrStartLength;
 
+    GameManager gm;
+
     private void Start()
     {
         point1 = points[index].position;
@@ -22,10 +24,14 @@ public class Patroller : MonoBehaviour
         sqrStartLength = (point1 - point2).sqrMagnitude;
         direction = (point2 - point1).normalized;
         transform.position = new Vector3(point1.x, point1.y, transform.position.z);
+        gm = GameManager.instance;
     }
 
     private void Update()
     {
+        if (!gm.IsActiveScene)
+            return;
+
         transform.position = transform.position + (Vector3)direction * speed * Time.deltaTime;
         float sqrLength = ((Vector2)transform.position - point1).sqrMagnitude;
         if (sqrLength > sqrStartLength)

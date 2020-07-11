@@ -6,6 +6,9 @@ public class Detractor : Distraction
 {
     void FixedUpdate()
     {
+        if (!gm.IsActiveScene)
+            return;
+
         TriggerDistraction(goose.position, transform.position);
     }
 }

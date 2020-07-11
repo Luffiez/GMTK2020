@@ -13,14 +13,19 @@ public class Chaser : MonoBehaviour
     float force;
     GameObject gesseObject;
     Rigidbody2D rigidbody;
+    GameManager gm;
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         gesseObject = GameObject.FindGameObjectWithTag("Gesse");
+        gm = GameManager.instance;
     }
 
     private void FixedUpdate()
     {
+        if (!gm.IsActiveScene)
+            return;
+
         Vector2 gessePosition = gesseObject.transform.position;
         Vector2 position = transform.position;
         float sqrMagnitude = (gessePosition - position).sqrMagnitude;

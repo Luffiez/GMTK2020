@@ -16,6 +16,9 @@ public class CameraMovement : MonoBehaviour
     float sqrStartLength;
     [SerializeField]
     GameObject gooseObject;
+    Rigidbody2D gooseRigidbody;
+    GameManager gm;
+
     private void Start()
     {
         //gooseObject = GameObject.FindGameObjectWithTag("gesse");
@@ -25,17 +28,25 @@ public class CameraMovement : MonoBehaviour
         sqrStartLength = (point1 - point2).sqrMagnitude;
         direction = (point2 - point1).normalized;
         transform.position = new Vector3(point1.x, point1.y, transform.position.z);
+        gooseRigidbody = gooseObject.GetComponent<Rigidbody2D>();
+        gm = GameManager.instance;
     }
 
     private void Update()
     {
+        if (!gm.IsActiveScene)
+            return;
+
+        if (point1 == point2)
+            Debug.Log("Same");
         float scalar = Vector2.Dot((Vector2)gooseObject.transform.position -  (Vector2)transform.position, direction);
         Vector2 target = direction * scalar;
         if(scalar > 0.1f || scalar < -0.1f)
         transform.position = transform.position + (Vector3)(((Vector2)transform.position + target)  - (Vector2)transform.position).normalized * speed * Time.deltaTime;
-
         float sqrLength = ((Vector2)transform.position - point1).sqrMagnitude;
-        if (sqrLength >= sqrStartLength && scalar > 0)
+        float directionScalar = Vector2.Dot(gooseRigidbody.velocity, direction);
+        Debug.Log(directionScalar);
+        if (sqrLength >= sqrStartLength && directionScalar > 0)
         {
             point1 = point2;
             index++;
@@ -46,15 +57,13 @@ public class CameraMovement : MonoBehaviour
             }
             else
             {
-                transform.position = new Vector3(point2.x, point2.y, transform.position.z);
                 point2 = points[index].position;
                 sqrStartLength = (point1 - point2).sqrMagnitude;
                 direction = (point2 - point1).normalized;
             }
         }
         float scalar2 = Vector2.Dot((Vector2)gooseObject.transform.position - (Vector2)point1, direction);
-        Debug.Log(scalar2);
-        if (scalar2 < -0.1)
+        if (scalar2 < -0.00000000001 && directionScalar < 0)
         {
             index-=2;
             if (index < 0)
@@ -68,6 +77,7 @@ public class CameraMovement : MonoBehaviour
                 sqrStartLength = (point1 - point2).sqrMagnitude;
                 direction = (point2 - point1).normalized;
             }
+            index++;
         }
     }
 }

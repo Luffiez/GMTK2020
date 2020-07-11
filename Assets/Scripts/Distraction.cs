@@ -15,6 +15,8 @@ public class Distraction : MonoBehaviour
 
     protected Rigidbody2D goose;
 
+    protected GameManager gm;
+
     private void Start()
     {
         goose = GameObject.FindGameObjectWithTag("Gesse").GetComponent<Rigidbody2D>();
@@ -23,6 +25,7 @@ public class Distraction : MonoBehaviour
         {
             Debug.LogError("Can't find ze goose!!");
         }
+        gm = GameManager.instance;
     }
 
     protected void TriggerDistraction(Vector2 pos1, Vector2 pos2)
