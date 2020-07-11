@@ -16,7 +16,6 @@ public class CameraMovement : MonoBehaviour
     float sqrStartLength;
     [SerializeField]
     GameObject gooseObject;
-    Vector2 lastPosition = Vector2.zero;
     Rigidbody2D gooseRigidbody;
     private void Start()
     {
@@ -32,6 +31,8 @@ public class CameraMovement : MonoBehaviour
 
     private void Update()
     {
+        if (point1 == point2)
+            Debug.Log("Same");
         float scalar = Vector2.Dot((Vector2)gooseObject.transform.position -  (Vector2)transform.position, direction);
         Vector2 target = direction * scalar;
         if(scalar > 0.1f || scalar < -0.1f)
@@ -39,7 +40,7 @@ public class CameraMovement : MonoBehaviour
         float sqrLength = ((Vector2)transform.position - point1).sqrMagnitude;
         float directionScalar = Vector2.Dot(gooseRigidbody.velocity, direction);
         Debug.Log(directionScalar);
-        if (sqrLength >= sqrStartLength && directionScalar >0 )
+        if (sqrLength >= sqrStartLength && directionScalar > 0)
         {
             point1 = point2;
             index++;
@@ -50,14 +51,13 @@ public class CameraMovement : MonoBehaviour
             }
             else
             {
-                transform.position = new Vector3(point2.x, point2.y, transform.position.z);
                 point2 = points[index].position;
                 sqrStartLength = (point1 - point2).sqrMagnitude;
                 direction = (point2 - point1).normalized;
             }
         }
         float scalar2 = Vector2.Dot((Vector2)gooseObject.transform.position - (Vector2)point1, direction);
-        if (scalar2 < -0.1  && directionScalar < 0)
+        if (scalar2 < -0.00000000001 && directionScalar < 0)
         {
             index-=2;
             if (index < 0)
@@ -71,8 +71,7 @@ public class CameraMovement : MonoBehaviour
                 sqrStartLength = (point1 - point2).sqrMagnitude;
                 direction = (point2 - point1).normalized;
             }
-
-            lastPosition = gooseObject.transform.position;
+            index++;
         }
     }
 }
