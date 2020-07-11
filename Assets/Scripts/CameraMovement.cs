@@ -43,7 +43,7 @@ public class CameraMovement : MonoBehaviour
         Vector2 target = direction * scalar;
         if(scalar > 0.1f || scalar < -0.1f)
         {
-            transform.position = transform.position + (Vector3)(((Vector2)transform.position + target)  - (Vector2)transform.position).normalized * speed * Time.deltaTime
+            transform.position = transform.position + (Vector3)(((Vector2)transform.position + target) - (Vector2)transform.position).normalized * speed * Time.deltaTime;
         }
 
         float sqrLength = ((Vector2)transform.position - point1).sqrMagnitude;
