@@ -35,13 +35,14 @@ public class CameraMovement : MonoBehaviour
         transform.position = transform.position + (Vector3)(((Vector2)transform.position + target)  - (Vector2)transform.position).normalized * speed * Time.deltaTime;
 
         float sqrLength = ((Vector2)transform.position - point1).sqrMagnitude;
-        if (sqrLength > sqrStartLength)
+        if (sqrLength >= sqrStartLength && scalar > 0)
         {
             point1 = point2;
             index++;
             if (index >= points.Length)
             {
-               
+                //done call event
+                
             }
             else
             {
@@ -50,6 +51,25 @@ public class CameraMovement : MonoBehaviour
                 sqrStartLength = (point1 - point2).sqrMagnitude;
                 direction = (point2 - point1).normalized;
             }
+        }
+        float scalar2 = Vector2.Dot((Vector2)gooseObject.transform.position - (Vector2)point1, direction);
+        Debug.Log(scalar2);
+        if (scalar2 < -0.1)
+        {
+            index-=2;
+            if (index < 0)
+            {
+                index = 0;
+            }
+            else
+            {
+                point2 = point1;
+                point1 = points[index].position;
+                sqrStartLength = (point1 - point2).sqrMagnitude;
+                direction = (point2 - point1).normalized;
+            }
+            
+
         }
     }
 }
