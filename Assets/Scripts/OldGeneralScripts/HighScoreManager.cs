@@ -9,7 +9,7 @@ using System.Linq;
 public class Score
 {
     public int honks;
-    public string timer;
+    public float timer;
     public string date;
 }
 
@@ -77,7 +77,7 @@ public class HighScoreManager : MonoBehaviour
 
     public void AddToScoreboard(string sceneName, int honks, float timer)
     {
-        Level levelExists = scoreboard.levels.Find(x => x.levelName == sceneName);
+        Level levelExists = GetLevel(sceneName);
         if (levelExists == null)
         {
             List<Score> scores = new List<Score>();
@@ -94,14 +94,41 @@ public class HighScoreManager : MonoBehaviour
         Score score = new Score();
         score.honks = honks;
 
-        string minutes = Mathf.Floor(timer / 60).ToString("00");
-        string seconds = (timer % 60).ToString("00");
-        score.timer = $"{minutes}:{seconds}";
+        score.timer = timer;
 
         score.date = System.DateTime.Today.ToString("dd / MM / yyyy");
         levelExists.scoreList.Add(score);
 
         SaveScoreboard();
+    }
+
+    Level GetLevel(string level)
+    {
+        return scoreboard.levels.Find(x => x.levelName == level);
+    }
+
+    Score GetHighestScore(Level level)
+    {
+        Score highest = level.scoreList[0];
+        foreach (Score score in level.scoreList)
+        {
+            if (score.timer < highest.timer)
+                highest = score;
+        }
+
+        return highest;
+    }
+
+    public string GetHighestScore(string sceneName)
+    {
+        Level level = GetLevel(sceneName);
+
+        if(level == null && level.scoreList.Count > 0)
+        {
+            return string.Empty;
+        }
+
+        return GetHighestScore(level).ToString();
     }
 
     public List<string> LoadCompletedLevels()

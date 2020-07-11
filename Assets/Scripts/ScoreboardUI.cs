@@ -20,6 +20,11 @@ public class ScoreboardUI : MonoBehaviour
 
     void LoadscoreboardScores()
     {
+
+        //string minutes = Mathf.Floor(timer / 60).ToString("00");
+        //string seconds = (timer % 60).ToString("00");
+        //score.timer = $"{minutes}:{seconds}";
+
         int j = 0;
         // NEED TO CHOOSE WHICH LEVEL TO VIEW SCORE ON.
 
