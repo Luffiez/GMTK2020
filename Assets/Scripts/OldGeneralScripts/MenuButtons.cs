@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class MenuButtons : MonoBehaviour
 {
-  
+
+    [SerializeField]
+    Animator levelAnimatior;
     public void Play()
     {
         Transition.instance.Play();
