@@ -261,9 +261,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   honkCooldown: 0.15
-  honkRadius: 3
+  honkRadius: 5
   forceStartPercent: 0.5
-  maxForce: 10
+  maxForce: 12
 --- !u!50 &1693924104603738334
 Rigidbody2D:
   serializedVersion: 4

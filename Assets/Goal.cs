@@ -10,7 +10,7 @@ public class Goal : MonoBehaviour
         {
             Debug.Log("Level Complete!");
             //Disable objects event
-            Invoke("RestartScene", 1f);
+            Invoke("RestartScene", 3f);
         }
     }
 

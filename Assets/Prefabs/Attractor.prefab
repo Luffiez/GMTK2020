@@ -129,9 +129,9 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  radius: 2.5
+  radius: 3
   forceStartPercent: 0.2
-  maxForce: 0.75
+  maxForce: 0.25
 --- !u!58 &66821150417289462
 CircleCollider2D:
   m_ObjectHideFlags: 0
