@@ -33,8 +33,6 @@ public class CameraMovement : MonoBehaviour
 
     private void Update()
     {
-        if (point1 == point2)
-            Debug.Log("Same");
         float scalar = Vector2.Dot((Vector2)gooseObject.transform.position -  (Vector2)transform.position, direction);
         Vector2 target = direction * scalar;
         if(scalar > 0.1f || scalar < -0.1f)
@@ -45,7 +43,7 @@ public class CameraMovement : MonoBehaviour
         {
             point1 = point2;
             index++;
-            if (index <= points.Length)
+            if (index <points.Length)
             { 
                 point2 = points[index].position;
                 sqrStartLength = (point1 - point2).sqrMagnitude;
