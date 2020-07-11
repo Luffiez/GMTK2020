@@ -13,6 +13,8 @@ public class CameraMovement : MonoBehaviour
     Vector2 direction;
     Vector2 point1;
     Vector2 point2;
+    [SerializeField]
+    float pointRadius = 0.6f;
     float sqrStartLength;
     [SerializeField]
     GameObject gooseObject;
@@ -40,28 +42,26 @@ public class CameraMovement : MonoBehaviour
         float scalar = Vector2.Dot((Vector2)gooseObject.transform.position -  (Vector2)transform.position, direction);
         Vector2 target = direction * scalar;
         if(scalar > 0.1f || scalar < -0.1f)
-        transform.position = transform.position + (Vector3)(((Vector2)transform.position + target)  - (Vector2)transform.position).normalized * speed * Time.deltaTime;
+        {
+            transform.position = transform.position + (Vector3)(((Vector2)transform.position + target)  - (Vector2)transform.position).normalized * speed * Time.deltaTime
+        }
+
         float sqrLength = ((Vector2)transform.position - point1).sqrMagnitude;
         float directionScalar = Vector2.Dot(gooseRigidbody.velocity, direction);
 
-        if (sqrLength >= sqrStartLength && directionScalar > 0)
+        if (sqrLength >= sqrStartLength - (pointRadius*pointRadius) && directionScalar > 0)
         {
             point1 = point2;
             index++;
-            if (index >= points.Length)
-            {
-                //done call event
-                
-            }
-            else
-            {
+            if (index <points.Length)
+            { 
                 point2 = points[index].position;
                 sqrStartLength = (point1 - point2).sqrMagnitude;
                 direction = (point2 - point1).normalized;
             }
         }
-        float scalar2 = Vector2.Dot((Vector2)gooseObject.transform.position - (Vector2)point1, direction);
-        if (scalar2 < -0.00000000001 && directionScalar < 0)
+        float sqrLength2 = ((Vector2)transform.position - point2).sqrMagnitude;
+        if (sqrLength2 >= sqrStartLength - (pointRadius * pointRadius) && directionScalar < 0)
         {
             index-=2;
             if (index < 0)
