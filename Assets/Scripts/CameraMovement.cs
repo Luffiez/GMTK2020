@@ -68,8 +68,6 @@ public class CameraMovement : MonoBehaviour
                 sqrStartLength = (point1 - point2).sqrMagnitude;
                 direction = (point2 - point1).normalized;
             }
-            
-
         }
     }
 }
