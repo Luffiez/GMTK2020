@@ -133,6 +133,8 @@ GameObject:
   - component: {fileID: 329245698}
   - component: {fileID: 329245697}
   - component: {fileID: 329245696}
+  - component: {fileID: 329245700}
+  - component: {fileID: 329245699}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -250,6 +252,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329245694}
   m_CullTransparentMesh: 0
+--- !u!114 &329245699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329245694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedf7101568c15943aed88a6dffe883d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationTime: 0.2
+  maxRotation: 2
+  timeOffset: 90
+--- !u!114 &329245700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329245694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c4076fe07c885c498eec6c3add00d72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxScale: 0.1
+  ScaleTime: 0.1
+  ScaleOffset: {x: 0, y: 30}
 --- !u!1 &424031503
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,6 +756,8 @@ GameObject:
   - component: {fileID: 590990935}
   - component: {fileID: 590990937}
   - component: {fileID: 590990936}
+  - component: {fileID: 590990939}
+  - component: {fileID: 590990938}
   m_Layer: 5
   m_Name: Sub
   m_TagString: Untagged
@@ -868,6 +902,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590990934}
   m_CullTransparentMesh: 0
+--- !u!114 &590990938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590990934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedf7101568c15943aed88a6dffe883d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationTime: 1
+  maxRotation: 5
+  timeOffset: 45
+--- !u!114 &590990939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590990934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c4076fe07c885c498eec6c3add00d72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxScale: 0.1
+  ScaleTime: 1
+  ScaleOffset: {x: 0, y: 45}
 --- !u!1 &642625234
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,6 +987,8 @@ GameObject:
   - component: {fileID: 711726693}
   - component: {fileID: 711726692}
   - component: {fileID: 711726691}
+  - component: {fileID: 711726695}
+  - component: {fileID: 711726694}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -1040,6 +1106,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 711726689}
   m_CullTransparentMesh: 0
+--- !u!114 &711726694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711726689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedf7101568c15943aed88a6dffe883d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationTime: 0.2
+  maxRotation: 2
+  timeOffset: 0
+--- !u!114 &711726695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711726689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c4076fe07c885c498eec6c3add00d72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxScale: 0.3
+  ScaleTime: 0.1
+  ScaleOffset: {x: 25, y: 0}
 --- !u!1 &791966205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,6 +1246,8 @@ GameObject:
   - component: {fileID: 1070096145}
   - component: {fileID: 1070096147}
   - component: {fileID: 1070096146}
+  - component: {fileID: 1070096149}
+  - component: {fileID: 1070096148}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1294,6 +1392,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1070096144}
   m_CullTransparentMesh: 0
+--- !u!114 &1070096148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070096144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedf7101568c15943aed88a6dffe883d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationTime: 1
+  maxRotation: 7
+  timeOffset: 1
+--- !u!114 &1070096149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070096144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c4076fe07c885c498eec6c3add00d72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxScale: 0.5
+  ScaleTime: 1
+  ScaleOffset: {x: 45, y: 0}
 --- !u!1 &1117233694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,6 +1675,7 @@ GameObject:
   - component: {fileID: 1164282943}
   - component: {fileID: 1164282945}
   - component: {fileID: 1164282944}
+  - component: {fileID: 1164282947}
   - component: {fileID: 1164282946}
   m_Layer: 5
   m_Name: Header
@@ -1701,9 +1830,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1164282942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5a476b89e48c744d879f010dbd40d76, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c4076fe07c885c498eec6c3add00d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxScale: 0.15
+  ScaleTime: 1
+  ScaleOffset: {x: 45, y: 0}
+--- !u!114 &1164282947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164282942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedf7101568c15943aed88a6dffe883d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationTime: 1
+  maxRotation: 2.5
+  timeOffset: 0
 --- !u!1 &1629492082
 GameObject:
   m_ObjectHideFlags: 0
