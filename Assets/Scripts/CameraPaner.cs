@@ -13,6 +13,8 @@ public class CameraPaner : MonoBehaviour
     Vector2 point1;
     Vector2 point2;
     float sqrStartLength;
+    GameManager gm;
+
     private void Start()
     {
         point1 =  points[index].position;

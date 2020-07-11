@@ -36,9 +36,7 @@ public class CameraMovement : MonoBehaviour
     {
         if (!gm.IsActiveScene)
             return;
-
-        if (point1 == point2)
-            Debug.Log("Same");
+        
         float scalar = Vector2.Dot((Vector2)gooseObject.transform.position -  (Vector2)transform.position, direction);
         Vector2 target = direction * scalar;
         if(scalar > 0.1f || scalar < -0.1f)
