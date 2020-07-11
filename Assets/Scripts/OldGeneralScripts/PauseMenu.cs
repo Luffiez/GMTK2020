@@ -30,7 +30,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
-        MusicManager.Instance.PauseSfx(true);
+        //MusicManager.Instance.PauseSfx(true);
         Time.timeScale = 0;
         cg.alpha = 1;
         cg.interactable = true;
@@ -39,7 +39,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        MusicManager.Instance.PauseSfx(false);
+        isPaused = false;
+        //MusicManager.Instance.PauseSfx(false);
         Time.timeScale = 1;
         cg.alpha = 0;
         cg.interactable = false;
@@ -49,7 +50,11 @@ public class PauseMenu : MonoBehaviour
     public void ReturnToMenu()
     {
         Time.timeScale = 1;
-        Transition.instance.Menu();
-        
+        Transition.instance.Menu(); 
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -44,5 +45,18 @@ public class GameManager : MonoBehaviour
     {
         numberOfHonks++;
         honkUpdate.Invoke(numberOfHonks);
+    }
+
+    public void CompleteLevel()
+    {
+        Debug.Log("Level Complete!");
+        SetSceneState(false);
+
+        HighScoreManager.instance.AddToScoreboard(SceneManager.GetActiveScene().name, numberOfHonks, timer);
+        Invoke("RestartScene", 3f);
+    }
+    private void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
