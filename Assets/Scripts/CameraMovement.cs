@@ -43,7 +43,7 @@ public class CameraMovement : MonoBehaviour
         transform.position = transform.position + (Vector3)(((Vector2)transform.position + target)  - (Vector2)transform.position).normalized * speed * Time.deltaTime;
         float sqrLength = ((Vector2)transform.position - point1).sqrMagnitude;
         float directionScalar = Vector2.Dot(gooseRigidbody.velocity, direction);
-        Debug.Log(directionScalar);
+
         if (sqrLength >= sqrStartLength && directionScalar > 0)
         {
             point1 = point2;
