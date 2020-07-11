@@ -9,15 +9,19 @@ public class GesseMovement : MonoBehaviour
     Rigidbody2D rigidbody;
     [SerializeField]
     float maxSpeed;
-    // Start is called before the first frame update
+    GameManager gm;
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        gm = GameManager.instance;
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
+        if (!gm.IsActiveScene)
+            return;
+
         if (rigidbody.velocity.sqrMagnitude > maxSpeed * maxSpeed)
         {
             float magnitude = rigidbody.velocity.magnitude;

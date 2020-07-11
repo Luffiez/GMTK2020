@@ -69,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: ffc3fe3f2d0d60749a5e72591928a824, type: 3}
   m_Color: {r: 0.6343262, g: 1, b: 0.5896226, a: 1}
   m_FlipX: 0
@@ -91,6 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8947291176340716492}
   - component: {fileID: 8947291176340716480}
+  - component: {fileID: 66821150417289462}
   m_Layer: 0
   m_Name: Attractor
   m_TagString: Untagged
@@ -128,6 +129,22 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  radius: 1
-  forceStartPercent: 0
-  maxForce: 2
+  radius: 3
+  forceStartPercent: 0.2
+  maxForce: 0.25
+--- !u!58 &66821150417289462
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8947291176340716481}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
