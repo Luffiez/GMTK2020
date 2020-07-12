@@ -58,8 +58,18 @@ public class GameManager : MonoBehaviour
         SetSceneState(false);
 
         HighScoreManager.instance.AddToScoreboard(SceneManager.GetActiveScene().name, numberOfHonks, timer);
-        Invoke("RestartScene", 3f);
+        
+        if(SceneManager.GetActiveScene().name.Equals("Level_5"))
+        {
+            SceneManager.LoadScene("Menu");
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        
     }
+
     private void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

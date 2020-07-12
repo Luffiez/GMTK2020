@@ -15,7 +15,7 @@ public class Patroller : MonoBehaviour
     Vector2 point1;
     Vector2 point2;
     float sqrStartLength;
-    bool isFacingRight = false;
+    bool isFacingRight = true;
 
     GameManager gm;
 
@@ -35,7 +35,7 @@ public class Patroller : MonoBehaviour
         if (!gm.IsActiveScene)
             return;
 
-        if (direction.x < 0.3 && !isFacingRight || direction.x > -0.3 && isFacingRight)
+        if (direction.x > 0.1 && !isFacingRight || direction.x < -0.1 && isFacingRight)
         {
             isFacingRight = !isFacingRight;
             spriteTransform.localScale = new Vector3(spriteTransform.localScale.x * -1, spriteTransform.localScale.y, spriteTransform.localScale.z);

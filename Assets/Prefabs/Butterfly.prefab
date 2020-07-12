@@ -134,8 +134,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   radius: 2.5
-  forceStartPercent: 0.1
-  maxForce: 0.75
+  forceStartPercent: 0.3
+  maxForce: 1
   audioClip: {fileID: 8300000, guid: f1c2066977ea79c4faa5242f07ae3ef3, type: 3}
   audioClipVolume: 0.8
   maxRandomAudioTime: 2
