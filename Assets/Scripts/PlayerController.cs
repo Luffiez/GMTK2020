@@ -60,7 +60,7 @@ public class PlayerController : Distraction
         if (honkTimer > 0 || !gm.IsActiveScene)
             return;
 
-        circleRadius.StartCoroutine(circleRadius.DisplayCircle(0.5f));
+        circleRadius.StartCoroutine(circleRadius.DisplayCircle(1f));
 
         gm.IncreaseHonks();
         honkTimer = honkCooldown;
