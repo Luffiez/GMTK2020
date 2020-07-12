@@ -12,7 +12,16 @@ public class Distraction : MonoBehaviour
     protected float forceStartPercent;
     [SerializeField]
     protected float maxForce;
-
+    [SerializeField]
+    AudioClip audioClip;
+    [SerializeField]
+    float audioClipVolume;
+    [SerializeField]
+    float maxRandomAudioTime;
+    [SerializeField]
+    float minRandomAudioTime;
+    protected float audioTimer;
+    
     protected Rigidbody2D goose;
 
     protected GameManager gm;
@@ -20,7 +29,7 @@ public class Distraction : MonoBehaviour
     protected virtual void Start()
     {
         goose = GameObject.FindGameObjectWithTag("Gesse").GetComponent<Rigidbody2D>();
-
+        audioTimer = Random.Range(minRandomAudioTime, maxRandomAudioTime);
         if (!goose)
         {
             Debug.LogError("Can't find ze goose!!");
@@ -33,6 +42,11 @@ public class Distraction : MonoBehaviour
         Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, gooseMask);
         if (hit != null)
         {
+            if (audioTimer <= 0 && audioClip != null)
+            {
+                MusicManager.Instance.PlayOneShot(audioClip, audioClipVolume);
+                audioTimer = Random.Range(minRandomAudioTime, maxRandomAudioTime);
+            }
             Debug.Log("Hit goose!");
             Vector2 direction = (pos1 - pos2).normalized;
             float force = maxForce * 1 - forceStartPercent * (transform.position - hit.transform.position).sqrMagnitude / (radius * radius);

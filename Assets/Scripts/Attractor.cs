@@ -8,7 +8,7 @@ public class Attractor : Distraction
     {
         if (!gm.IsActiveScene)
             return;
-
+        audioTimer -= Time.fixedDeltaTime;
         TriggerDistraction(transform.position, goose.position);
     }
 }

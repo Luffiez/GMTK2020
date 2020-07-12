@@ -3,7 +3,10 @@
 public class Goal : MonoBehaviour
 {
     GameManager gm;
-
+    [SerializeField]
+    AudioClip winClip;
+    [SerializeField]
+    float volume;
     private void Start()
     {
         gm = GameManager.instance;
@@ -13,6 +16,7 @@ public class Goal : MonoBehaviour
     {
         if(collision.CompareTag("Gesse"))
         {
+            MusicManager.Instance.PlayOneShot(winClip, volume);
             gm.CompleteLevel();
         }
     }

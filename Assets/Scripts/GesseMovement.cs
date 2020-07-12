@@ -5,7 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class GesseMovement : MonoBehaviour
 {
-
+    [SerializeField]
+    AudioClip honk;
+    [SerializeField]
+    float honkVolume;
+    [SerializeField]
+    float minHonkTime;
+    [SerializeField]
+    float maxHonkTime;
+    float honkTimer;
     Rigidbody2D rigidbody;
     [SerializeField]
     float maxSpeed;
@@ -17,6 +25,7 @@ public class GesseMovement : MonoBehaviour
 
     void Start()
     {
+        honkTimer = Random.Range(minHonkTime, maxHonkTime);
         rigidbody = GetComponent<Rigidbody2D>();
         gm = GameManager.instance;
         anim = GetComponent<Animator>();
@@ -29,6 +38,13 @@ public class GesseMovement : MonoBehaviour
 
         if (!gm.IsActiveScene)
             return;
+
+        honkTimer -= Time.deltaTime;
+        if (honkTimer <= 0)
+        {
+            MusicManager.Instance.PlayOneShot(honk, honkVolume);
+            honkTimer = Random.Range(minHonkTime, maxHonkTime);
+        }
 
         if (rigidbody.velocity.sqrMagnitude > maxSpeed * maxSpeed)
         {
