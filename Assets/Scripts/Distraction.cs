@@ -11,9 +11,9 @@ public class Distraction : MonoBehaviour
     [SerializeField]
     protected float maxForce;
     [SerializeField]
-    AudioClip audioClip;
+    protected AudioClip audioClip;
     [SerializeField]
-    float audioClipVolume;
+    protected float audioClipVolume;
     [SerializeField]
     float maxRandomAudioTime;
     [SerializeField]

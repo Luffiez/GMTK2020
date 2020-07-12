@@ -44,11 +44,14 @@ public class Transition : MonoBehaviour
         }
     }
 
-    public void Play()
+    public void Play(int level)
     {
         MusicManager.Instance.PlayOneShot(ClickSound,2);
-        sceneToLoad = "Game";
+        sceneToLoad = $"Level_{level}";
         anim.SetBool("TransitionTo", true);
+        GameManager.instance.NewScene();
+
+        LoadScene();
     }
 
     public void Menu()
@@ -58,7 +61,7 @@ public class Transition : MonoBehaviour
         anim.SetBool("TransitionTo", true);
     }
 
-    public void LoadScene()
+    void LoadScene()
     {
         if (!string.IsNullOrEmpty(sceneToLoad))
             SceneManager.LoadScene(sceneToLoad);

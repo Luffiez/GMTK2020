@@ -63,7 +63,7 @@ public class PlayerController : Distraction
 
         
         lineCircle.StartCoroutine(lineCircle.DisplayCircle(0.5f));
-        
+        MusicManager.Instance.PlayOneShot(audioClip, audioClipVolume);
 
         gm.IncreaseHonks();
         honkTimer = honkCooldown;

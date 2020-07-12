@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         if (instance)
             Destroy(gameObject);
         else
-        instance = this;
+            instance = this;
     }
 
     private void Update()
@@ -34,6 +34,11 @@ public class GameManager : MonoBehaviour
             timer += Time.deltaTime;
             timerUpdate.Invoke(timer);
         }
+    }
+
+    public void NewScene()
+    {
+        timer = 0;
     }
 
     public void SetSceneState(bool state)
