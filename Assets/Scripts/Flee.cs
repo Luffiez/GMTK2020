@@ -33,6 +33,7 @@ public class Flee : MonoBehaviour
         if (sqrMagnitude < maxDistance*maxDistance)
         {
             Vector2 direction = (position - gessePosition).normalized;
+
             rigidbody.AddForce(direction * force);
         }
     }
