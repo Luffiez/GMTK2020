@@ -38,7 +38,8 @@ public class MusicManager : MonoBehaviour
 
     private void Start()
     {
-        bgmSource.volume = BgmVolume; 
+        bgmSource.volume = BgmVolume;
+        bgmSource.loop = true;
         sfxSource.volume = SfxVolume;
 
         if (bgmSource.clip != null)
