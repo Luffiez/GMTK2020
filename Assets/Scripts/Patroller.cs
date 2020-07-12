@@ -35,7 +35,7 @@ public class Patroller : MonoBehaviour
         if (!gm.IsActiveScene)
             return;
 
-        if (direction.x < 0.1 && !isFacingRight || direction.x > -0.1 && isFacingRight)
+        if (direction.x < 0.3 && !isFacingRight || direction.x > -0.3 && isFacingRight)
         {
             isFacingRight = !isFacingRight;
             spriteTransform.localScale = new Vector3(spriteTransform.localScale.x * -1, spriteTransform.localScale.y, spriteTransform.localScale.z);

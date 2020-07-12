@@ -880,10 +880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
-  points:
-  - {fileID: 1715384369}
-  - {fileID: 676996159}
-  - {fileID: 1316103206}
+  pointsParent: {fileID: 2109854464}
   pointRadius: 0.6
   gooseObject: {fileID: 676728060}
 --- !u!20 &519420031
@@ -957,10 +954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
-  points:
-  - {fileID: 1625114542}
-  - {fileID: 223838048}
-  - {fileID: 789049229}
+  pointsParent: {fileID: 2109854464}
 --- !u!4 &530321390 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4113963319116136313, guid: 89f605fd47e4096459fb8dbe15b1cca9,
@@ -80373,7 +80367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316103205}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.11, y: -0.38, z: 0}
+  m_LocalPosition: {x: -11.19, y: 0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2109854464}
@@ -82028,7 +82022,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715384368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.68, y: 1.1, z: 0}
+  m_LocalPosition: {x: 7.02, y: -0.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2109854464}
