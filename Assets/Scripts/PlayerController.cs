@@ -25,18 +25,20 @@ public class PlayerController : MonoBehaviour
     private bool isFacingRight;
     private bool isFacingUp;
 
+    Animator anim;
     Rigidbody2D goose;
     GameManager gm;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         goose = GameObject.FindGameObjectWithTag("Gesse").GetComponent<Rigidbody2D>();
-
         if (!goose)
         {
             Debug.LogError("Can't find ze goose!!");
         }
+
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 
         gm = GameManager.instance;
     }
