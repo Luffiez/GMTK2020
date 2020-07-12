@@ -70,7 +70,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: ffc3fe3f2d0d60749a5e72591928a824, type: 3}
+  m_Sprite: {fileID: 6766311580512504252, guid: d313109211360fb48b636eb259f850c3,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,6 +94,7 @@ GameObject:
   - component: {fileID: 2406461421197494974}
   - component: {fileID: 2406461421197494975}
   - component: {fileID: 2406461421197494962}
+  - component: {fileID: 676728065}
   m_Layer: 8
   m_Name: Geese
   m_TagString: Gesse
@@ -128,7 +130,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.25
+  m_LinearDrag: 0.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -148,6 +150,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c9fbf1be1671f459f3252ab263e6fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  honk: {fileID: 8300000, guid: c27fd88a59d102a47889afd749527b20, type: 3}
+  honkVolume: 1
+  minHonkTime: 4
+  maxHonkTime: 12
   maxSpeed: 2
 --- !u!58 &2406461421197494962
 CircleCollider2D:
@@ -164,4 +170,23 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
+--- !u!95 &676728065
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2406461421197494972}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d27f9039fd18e344fb857f990ae40f78, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

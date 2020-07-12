@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MusicManager : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class MusicManager : MonoBehaviour
     AudioSource bgmSource;
     [SerializeField]
     AudioSource sfxSource;
+
+    public Slider masterSlider;
+    public Slider bgmSlider;
+    public Slider sfxSlider;
 
     public AudioClip menuMusic;
     public AudioClip gameMusic;
@@ -45,7 +50,9 @@ public class MusicManager : MonoBehaviour
         if (bgmSource.clip != null)
             bgmSource.Play();
 
-        bgmSource.volume = masterVolume;
+        masterSlider.value = masterVolume;
+        sfxSlider.value = sfxVolume;
+        bgmSlider.value = bgmVolume;
     }
 
     public void ChangeBgmSong(AudioClip clip)
@@ -60,6 +67,28 @@ public class MusicManager : MonoBehaviour
             sfxSource.Pause();
         else
             sfxSource.Play();
+    }
+
+    public void ChangeMasterVolume()
+    {
+        masterVolume = masterSlider.value;
+
+        sfxSource.volume = SfxVolume;
+        bgmSource.volume = BgmVolume;
+    }
+
+    public void ChangeMusicVolume()
+    {
+        bgmVolume = bgmSlider.value;
+
+        bgmSource.volume = BgmVolume;
+    }
+
+    public void ChangeSoundVolume()
+    {
+        sfxVolume = sfxSlider.value;
+
+        sfxSource.volume = SfxVolume;
     }
 
     public void ChangeBgmVolume(float volume)

@@ -34,7 +34,7 @@ public class Transition : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         anim.SetBool("TransitionTo", false);
-        if(SceneManager.GetActiveScene().name == "Game")
+        if(SceneManager.GetActiveScene().name != "Menu")
         {
             MusicManager.Instance.ChangeBgmSong(MusicManager.Instance.gameMusic);
         }
@@ -50,8 +50,6 @@ public class Transition : MonoBehaviour
         sceneToLoad = $"Level_{level}";
         anim.SetBool("TransitionTo", true);
         GameManager.instance.NewScene();
-
-        LoadScene();
     }
 
     public void Menu()
@@ -64,7 +62,9 @@ public class Transition : MonoBehaviour
     void LoadScene()
     {
         if (!string.IsNullOrEmpty(sceneToLoad))
+        {
             SceneManager.LoadScene(sceneToLoad);
+        }
         else
             Debug.LogWarning("sceneToLoad has not been specified!");
     }
