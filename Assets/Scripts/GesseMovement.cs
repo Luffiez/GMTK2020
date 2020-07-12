@@ -11,10 +11,15 @@ public class GesseMovement : MonoBehaviour
     float maxSpeed;
     GameManager gm;
 
+    bool isFacingRight = true;
+
+    Animator anim;
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         gm = GameManager.instance;
+        anim = GetComponent<Animator>();
     }
 
     void LateUpdate()
@@ -28,10 +33,25 @@ public class GesseMovement : MonoBehaviour
             float deltaSpeed = magnitude - maxSpeed;
             rigidbody.velocity = Vector2.ClampMagnitude( rigidbody.velocity,maxSpeed);
         }
+
+        if(rigidbody.velocity.x > 0.1 && !isFacingRight ||
+            rigidbody.velocity.x < -0.1 && isFacingRight)
+        {
+            FlipX();
+        }
+
+        anim.SetFloat("Horizontal", rigidbody.velocity.x);
+        anim.SetFloat("Vertical", rigidbody.velocity.y);
     }
 
     public void Addforce(Vector2 force)
     {
         rigidbody.AddForce(force);
+    }
+
+    void FlipX()
+    {
+        isFacingRight = !isFacingRight;
+        transform.localScale = new Vector3(transform.localScale.x * -1, 1, 1);
     }
 }
