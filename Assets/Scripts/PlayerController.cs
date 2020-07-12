@@ -3,21 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Distraction
 {
     [SerializeField]
     float moveSpeed = 2;
     [SerializeField]
-    LayerMask gooseMask;
-
-    [SerializeField]
     float honkCooldown = 0.5f;
     [SerializeField]
     float honkRadius = 2;
-    [SerializeField]
-    float forceStartPercent;
-    [SerializeField]
-    float maxForce;
 
     private float honkTimer = 0;
     Vector2 movementInput;
@@ -25,22 +18,16 @@ public class PlayerController : MonoBehaviour
     private bool isFacingRight = true;
     private bool isFacingUp;
 
+    LineCircle circleRadius;
     Animator anim;
-    Rigidbody2D goose;
-    GameManager gm;
 
-    void Start()
+    protected override void Start()
     {
-        goose = GameObject.FindGameObjectWithTag("Gesse").GetComponent<Rigidbody2D>();
-        if (!goose)
-        {
-            Debug.LogError("Can't find ze goose!!");
-        }
-
+        base.Start();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-
-        gm = GameManager.instance;
+        circleRadius = GetComponentInChildren<LineCircle>();
+        circleRadius.DoRenderer(radius);
     }
 
     private void Update()
@@ -70,20 +57,15 @@ public class PlayerController : MonoBehaviour
    
     private void Honk()
     {
-        if (honkTimer > 0)
+        if (honkTimer > 0 || !gm.IsActiveScene)
             return;
+
+        circleRadius.StartCoroutine(circleRadius.DisplayCircle(0.5f));
 
         gm.IncreaseHonks();
         honkTimer = honkCooldown;
-        Collider2D hit = Physics2D.OverlapCircle(transform.position, honkRadius, gooseMask);
-       
-        if(hit)
-        {
-            Debug.Log("Hit goose with honk, it's super effective!");
-            Vector2 direction = (transform.position - hit.transform.position).normalized;
-            float force = maxForce * 1 - forceStartPercent * (transform.position - hit.transform.position).sqrMagnitude / (honkRadius * honkRadius);
-            goose.AddForce(direction * force);
-        }
+
+        TriggerDistraction(transform.position, goose.position);
     }
 
     void FlipX()

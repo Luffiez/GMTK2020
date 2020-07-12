@@ -5,7 +5,7 @@ using UnityEngine;
 public class Distraction : MonoBehaviour
 {
     [SerializeField]
-    protected LayerMask layerMask;
+    protected LayerMask gooseMask;
     [SerializeField]
     protected float radius;
     [SerializeField]
@@ -17,7 +17,7 @@ public class Distraction : MonoBehaviour
 
     protected GameManager gm;
 
-    private void Start()
+    protected virtual void Start()
     {
         goose = GameObject.FindGameObjectWithTag("Gesse").GetComponent<Rigidbody2D>();
 
@@ -30,9 +30,10 @@ public class Distraction : MonoBehaviour
 
     protected void TriggerDistraction(Vector2 pos1, Vector2 pos2)
     {
-        Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, layerMask);
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, gooseMask);
         if (hit != null)
         {
+            Debug.Log("Hit goose!");
             Vector2 direction = (pos1 - pos2).normalized;
             float force = maxForce * 1 - forceStartPercent * (transform.position - hit.transform.position).sqrMagnitude / (radius * radius);
             goose.AddForce(direction * force);
