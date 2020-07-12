@@ -50,8 +50,6 @@ public class Transition : MonoBehaviour
         sceneToLoad = $"Level_{level}";
         anim.SetBool("TransitionTo", true);
         GameManager.instance.NewScene();
-
-        LoadScene();
     }
 
     public void Menu()
