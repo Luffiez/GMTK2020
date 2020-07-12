@@ -9,6 +9,12 @@ public class Detractor : Distraction
         if (!gm.IsActiveScene)
             return;
         audioTimer -= Time.fixedDeltaTime;
-        TriggerDistraction(goose.position, transform.position);
+        if(TriggerDistraction(goose.position, transform.position))
+        {
+            if (!lineCircle.isActive)
+            {
+                lineCircle.StartCoroutine(lineCircle.DisplayCircle(0.5f));
+            }
+        }
     }
 }

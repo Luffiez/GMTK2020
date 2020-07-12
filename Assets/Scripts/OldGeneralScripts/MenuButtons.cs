@@ -7,9 +7,9 @@ public class MenuButtons : MonoBehaviour
 
     [SerializeField]
     Animator levelAnimatior;
-    public void Play()
+    public void Play(int level)
     {
-        Transition.instance.Play();
+        Transition.instance.Play(level);
     }
 
     public void Exit()

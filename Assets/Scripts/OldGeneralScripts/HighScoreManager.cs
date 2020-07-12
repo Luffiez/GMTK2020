@@ -111,7 +111,7 @@ public class HighScoreManager : MonoBehaviour
     {
         Level level = GetLevel(sceneName);
 
-        if(level == null && level.scoreList.Count > 0)
+        if(level == null || level.scoreList.Count > 0)
         {
             return null;
         }

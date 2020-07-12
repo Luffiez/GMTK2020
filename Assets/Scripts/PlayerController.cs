@@ -18,7 +18,6 @@ public class PlayerController : Distraction
     private bool isFacingRight = true;
     private bool isFacingUp;
 
-    LineCircle circleRadius;
     Animator anim;
 
     protected override void Start()
@@ -26,8 +25,6 @@ public class PlayerController : Distraction
         base.Start();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        circleRadius = GetComponentInChildren<LineCircle>();
-        circleRadius.DoRenderer(radius);
     }
 
     private void Update()
@@ -36,7 +33,11 @@ public class PlayerController : Distraction
         anim.SetFloat("Vertical", rb.velocity.y);
 
         if (!gm.IsActiveScene)
+        {
+            if (rb.velocity.magnitude > 0)
+                rb.velocity = Vector2.zero;
             return;
+        }
 
         rb.velocity = movementInput * moveSpeed;
 
@@ -60,7 +61,9 @@ public class PlayerController : Distraction
         if (honkTimer > 0 || !gm.IsActiveScene)
             return;
 
-        circleRadius.StartCoroutine(circleRadius.DisplayCircle(0.5f));
+        
+        lineCircle.StartCoroutine(lineCircle.DisplayCircle(0.5f));
+        MusicManager.Instance.PlayOneShot(audioClip, audioClipVolume);
 
         gm.IncreaseHonks();
         honkTimer = honkCooldown;
