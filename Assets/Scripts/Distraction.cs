@@ -38,4 +38,10 @@ public class Distraction : MonoBehaviour
             goose.AddForce(direction * force);
         }
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, radius);
+    }
 }
