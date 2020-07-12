@@ -129,12 +129,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a30ca10bde19346964e05c8776972b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMask:
+  gooseMask:
     serializedVersion: 2
     m_Bits: 256
   radius: 2.5
   forceStartPercent: 0.1
   maxForce: 0.75
+  audioClip: {fileID: 8300000, guid: f1c2066977ea79c4faa5242f07ae3ef3, type: 3}
+  audioClipVolume: 5
+  maxRandomAudioTime: 5
+  minRandomAudioTime: 1
 --- !u!50 &3861166674790363606
 Rigidbody2D:
   serializedVersion: 4
