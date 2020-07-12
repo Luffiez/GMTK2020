@@ -76649,6 +76649,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 8092390030173637191, guid: 89e6256db38bacd4784969d64eacb6cf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8092390030261510126, guid: 89e6256db38bacd4784969d64eacb6cf,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -84631,6 +84636,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369069646429076629, guid: d3f97ccf6b251644db1659eb826bdaf2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5369069646429076715, guid: d3f97ccf6b251644db1659eb826bdaf2,
         type: 3}
