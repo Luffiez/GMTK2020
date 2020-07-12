@@ -173,6 +173,7 @@ MonoBehaviour:
   points:
   - {fileID: 2736575911498805613}
   - {fileID: 2736575910789219058}
+  spriteTransform: {fileID: 0}
 --- !u!114 &2736575911533312156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,12 +186,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a30ca10bde19346964e05c8776972b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMask:
+  gooseMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   radius: 2
   forceStartPercent: 0.3
   maxForce: 0.5
+  audioClip: {fileID: 0}
+  audioClipVolume: 0
+  maxRandomAudioTime: 0
+  minRandomAudioTime: 0
 --- !u!1 &2736575911961149972
 GameObject:
   m_ObjectHideFlags: 0
