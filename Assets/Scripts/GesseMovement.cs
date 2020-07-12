@@ -24,6 +24,9 @@ public class GesseMovement : MonoBehaviour
 
     void LateUpdate()
     {
+        anim.SetFloat("Horizontal", rigidbody.velocity.x);
+        anim.SetFloat("Vertical", rigidbody.velocity.y);
+
         if (!gm.IsActiveScene)
             return;
 
@@ -40,8 +43,6 @@ public class GesseMovement : MonoBehaviour
             FlipX();
         }
 
-        anim.SetFloat("Horizontal", rigidbody.velocity.x);
-        anim.SetFloat("Vertical", rigidbody.velocity.y);
     }
 
     public void Addforce(Vector2 force)

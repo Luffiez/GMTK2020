@@ -22,27 +22,32 @@ public class PlayerController : MonoBehaviour
     private float honkTimer = 0;
     Vector2 movementInput;
     Rigidbody2D rb;
-    private bool isFacingRight;
+    private bool isFacingRight = true;
     private bool isFacingUp;
 
+    Animator anim;
     Rigidbody2D goose;
     GameManager gm;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         goose = GameObject.FindGameObjectWithTag("Gesse").GetComponent<Rigidbody2D>();
-
         if (!goose)
         {
             Debug.LogError("Can't find ze goose!!");
         }
+
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 
         gm = GameManager.instance;
     }
 
     private void Update()
     {
+        anim.SetFloat("Horizontal", rb.velocity.x);
+        anim.SetFloat("Vertical", rb.velocity.y);
+
         if (!gm.IsActiveScene)
             return;
 

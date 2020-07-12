@@ -131,7 +131,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  radius: 2
+  radius: 2.5
   forceStartPercent: 0.5
   maxForce: 3
 --- !u!58 &2186306837530853415
