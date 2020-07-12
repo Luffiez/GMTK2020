@@ -894,6 +894,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: {fileID: 17536959}
   highscore: {fileID: 1743227991}
+  button: {fileID: 186962585}
 --- !u!1 &273546473
 GameObject:
   m_ObjectHideFlags: 0
@@ -3320,6 +3321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: {fileID: 87039441}
   highscore: {fileID: 833688039}
+  button: {fileID: 1579741009}
 --- !u!1 &1610252033
 GameObject:
   m_ObjectHideFlags: 0
@@ -3465,6 +3467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: {fileID: 2094688320}
   highscore: {fileID: 1855873370}
+  button: {fileID: 1610252035}
 --- !u!1 &1629492082
 GameObject:
   m_ObjectHideFlags: 0
@@ -4235,6 +4238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: {fileID: 1123397888}
   highscore: {fileID: 172832136}
+  button: {fileID: 1756282138}
 --- !u!1 &1855873368
 GameObject:
   m_ObjectHideFlags: 0
@@ -4694,6 +4698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: {fileID: 2051422770}
   highscore: {fileID: 787890183}
+  button: {fileID: 1969349414}
 --- !u!1 &1973111498
 GameObject:
   m_ObjectHideFlags: 0
@@ -4839,6 +4844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: {fileID: 1945979286}
   highscore: {fileID: 119815193}
+  button: {fileID: 1973111500}
 --- !u!1 &2051422768
 GameObject:
   m_ObjectHideFlags: 0
