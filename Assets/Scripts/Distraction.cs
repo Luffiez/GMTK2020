@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Distraction : MonoBehaviour
 {
@@ -26,18 +24,24 @@ public class Distraction : MonoBehaviour
 
     protected GameManager gm;
 
+    protected LineCircle lineCircle;
+
     protected virtual void Start()
     {
         goose = GameObject.FindGameObjectWithTag("Gesse").GetComponent<Rigidbody2D>();
         audioTimer = Random.Range(minRandomAudioTime, maxRandomAudioTime);
+
         if (!goose)
         {
             Debug.LogError("Can't find ze goose!!");
         }
         gm = GameManager.instance;
+
+        lineCircle = GetComponentInChildren<LineCircle>();
+        lineCircle.DoRenderer(radius);
     }
 
-    protected void TriggerDistraction(Vector2 pos1, Vector2 pos2)
+    protected bool TriggerDistraction(Vector2 pos1, Vector2 pos2)
     {
         Collider2D hit = Physics2D.OverlapCircle(transform.position, radius, gooseMask);
         if (hit != null)
@@ -51,7 +55,10 @@ public class Distraction : MonoBehaviour
             Vector2 direction = (pos1 - pos2).normalized;
             float force = maxForce * 1 - forceStartPercent * (transform.position - hit.transform.position).sqrMagnitude / (radius * radius);
             goose.AddForce(direction * force);
+
+            return true;
         }
+        return false;
     }
 
     private void OnDrawGizmosSelected()

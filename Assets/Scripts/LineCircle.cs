@@ -7,10 +7,10 @@ public class LineCircle : MonoBehaviour
     [Range(3, 256)]
     public int numSegments = 64;
     public Color startColor, endColor;
-    public AnimationCurve widthCurve;
+
+    public bool isActive = false;
     LineRenderer lr;
     float radius;
-    public float startWidth, endWidth;
 
     void Awake()
     {
@@ -21,10 +21,10 @@ public class LineCircle : MonoBehaviour
 
     public IEnumerator DisplayCircle(float duration)
     {
+        isActive = true;
         float elapsedTime = 0;
 
         Color currentColor = startColor;
-        float currentWidth = startWidth;
         float startRadius = radius * 0.8f;
         float endRadius = radius ;
         float curRadius = startRadius;
@@ -33,13 +33,11 @@ public class LineCircle : MonoBehaviour
         while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;
-
             currentColor = Color.Lerp(startColor, endColor, elapsedTime / duration);
-            currentWidth = widthCurve.Evaluate(elapsedTime / duration);
+           
             curRadius = Mathf.Lerp(startRadius, endRadius, elapsedTime / duration);
             DoRenderer(curRadius);
-            //lr.endWidth = currentWidth;
-            //lr.startWidth = currentWidth;
+          
             lr.startColor = currentColor;
             lr.endColor = currentColor;
 
@@ -48,6 +46,7 @@ public class LineCircle : MonoBehaviour
 
         DoRenderer(endRadius);
         lr.enabled = false;
+        isActive = false;
         yield return null;
     }
 
