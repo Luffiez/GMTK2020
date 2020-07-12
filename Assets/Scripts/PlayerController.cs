@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private float honkTimer = 0;
     Vector2 movementInput;
     Rigidbody2D rb;
-    private bool isFacingRight;
+    private bool isFacingRight = true;
     private bool isFacingUp;
 
     Animator anim;
@@ -45,6 +45,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        anim.SetFloat("Horizontal", rb.velocity.x);
+        anim.SetFloat("Vertical", rb.velocity.y);
+
         if (!gm.IsActiveScene)
             return;
 
