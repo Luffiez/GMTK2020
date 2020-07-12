@@ -8,11 +8,14 @@ public class Patroller : MonoBehaviour
     float speed;
     [SerializeField]
     Transform[] points;
+    [SerializeField]
+    Transform spriteTransform;
     int index = 0;
     Vector2 direction;
     Vector2 point1;
     Vector2 point2;
     float sqrStartLength;
+    bool isFacingRight = false;
 
     GameManager gm;
 
@@ -31,6 +34,13 @@ public class Patroller : MonoBehaviour
     {
         if (!gm.IsActiveScene)
             return;
+
+        if (direction.x < 0.1 && !isFacingRight || direction.x > -0.1 && isFacingRight)
+        {
+            isFacingRight = !isFacingRight;
+            spriteTransform.localScale = new Vector3(spriteTransform.localScale.x * -1, spriteTransform.localScale.y, spriteTransform.localScale.z);
+        }
+            
 
         transform.position = transform.position + (Vector3)direction * speed * Time.deltaTime;
         float sqrLength = ((Vector2)transform.position - point1).sqrMagnitude;
