@@ -8,7 +8,7 @@ public class CameraMovement : MonoBehaviour
     [SerializeField]
     float speed;
     [SerializeField]
-    Transform[] points;
+    Transform pointsParent;
     int index = 0;
     Vector2 direction;
     Vector2 point1;
@@ -21,9 +21,12 @@ public class CameraMovement : MonoBehaviour
     Rigidbody2D gooseRigidbody;
     GameManager gm;
 
+    List<Transform> points = new List<Transform>();
+
     private void Start()
     {
-        //gooseObject = GameObject.FindGameObjectWithTag("gesse");
+        points.AddRange(pointsParent.GetComponentsInChildren<Transform>());
+        points.Remove(pointsParent);
         point1 = points[index].position;
         index++;
         point2 = points[index].position;
@@ -53,7 +56,7 @@ public class CameraMovement : MonoBehaviour
         {
             point1 = point2;
             index++;
-            if (index <points.Length)
+            if (index <points.Count)
             { 
                 point2 = points[index].position;
                 sqrStartLength = (point1 - point2).sqrMagnitude;

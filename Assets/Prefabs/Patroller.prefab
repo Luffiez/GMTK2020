@@ -192,10 +192,10 @@ MonoBehaviour:
   radius: 2
   forceStartPercent: 0.3
   maxForce: 0.5
-  audioClip: {fileID: 0}
-  audioClipVolume: 0
-  maxRandomAudioTime: 0
-  minRandomAudioTime: 0
+  audioClip: {fileID: 8300000, guid: 351282aeca2804441b9019b684a2830b, type: 3}
+  audioClipVolume: 0.8
+  maxRandomAudioTime: 1.5
+  minRandomAudioTime: 0.8
 --- !u!1 &2736575911961149972
 GameObject:
   m_ObjectHideFlags: 0

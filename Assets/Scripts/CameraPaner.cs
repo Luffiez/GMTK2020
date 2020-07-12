@@ -7,7 +7,8 @@ public class CameraPaner : MonoBehaviour
     [SerializeField]
     float speed;
     [SerializeField]
-    Transform[] points;
+    Transform pointsParent;
+    List<Transform> points = new List<Transform>();
     int index = 0;
     Vector2 direction;
     Vector2 point1;
@@ -17,6 +18,10 @@ public class CameraPaner : MonoBehaviour
 
     private void Start()
     {
+        points.AddRange(pointsParent.GetComponentsInChildren<Transform>());
+        points.Remove(pointsParent);
+        points.Reverse();
+
         point1 =  points[index].position;
         index++;
         point2 = points[index].position;
@@ -35,7 +40,7 @@ public class CameraPaner : MonoBehaviour
             transform.position = new Vector3( point2.x, point2.y, transform.position.z);
             point1 = point2;
             index++;
-            if (index >= points.Length)
+            if (index >= points.Count)
             {
                 //done call event
                 gm.SetSceneState(true);

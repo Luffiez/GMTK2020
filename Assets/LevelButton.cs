@@ -12,12 +12,8 @@ public class LevelButton : MonoBehaviour
     [SerializeField]
     TMP_Text highscore;
 
+    [SerializeField]
     Button button;
-
-    private void Start()
-    {
-        button = GetComponent<Button>();
-    }
 
     public void SetValues(string name, Score score, Score previousCompleted)
     {

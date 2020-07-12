@@ -135,10 +135,10 @@ MonoBehaviour:
   radius: 2.5
   forceStartPercent: 0.5
   maxForce: 3
-  audioClip: {fileID: 0}
-  audioClipVolume: 0
-  maxRandomAudioTime: 0
-  minRandomAudioTime: 0
+  audioClip: {fileID: 8300000, guid: 49e7f501662aa924fa2d8e75934c38f3, type: 3}
+  audioClipVolume: 1
+  maxRandomAudioTime: 2
+  minRandomAudioTime: 1
 --- !u!58 &2186306837530853415
 CircleCollider2D:
   m_ObjectHideFlags: 0
